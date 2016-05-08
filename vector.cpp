@@ -5,12 +5,11 @@ using namespace std;
 
 int* Vector::insert(int num)
 {
-  cout << capacity << endl;
   if(size == capacity)
     resize();
 
-  array[++size] = num;
-  return &(array[size]);
+  array[size++] = num;
+  return &(array[size - 1]);
 }
 
 int* Vector::erase(int num)

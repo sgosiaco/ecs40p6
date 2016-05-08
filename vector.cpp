@@ -28,21 +28,14 @@ int* Vector::erase(int num)
 
 int* Vector::find(int num)
 {
-  bool temp = true;
-
   for(int i = 0; i < size; i++)
+  {
     if(!(array[i] < num) && !(num < array[i]))
-      temp = false;
-
-  if(!temp)
-    for(int i = 0; i < size; i++)
     {
-      if(!(array[i] < num) && !(num < array[i]))
-      {
-        return &(array[i]);
-      }
-      cout << array[i] << " ";
+      return &(array[i]);
     }
+    cout << array[i] << " ";
+  }
   return NULL;
 }
 

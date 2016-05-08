@@ -5,7 +5,7 @@ using namespace std;
 
 int* Vector::insert(int num)
 {
-  if(size == capacity)
+  if(size == getCapacity())
     resize();
 
   array[size++] = num;
@@ -41,7 +41,7 @@ int* Vector::find(int num)
 
 int Vector::getCapacity()
 {
-  return capacity;
+  return getCapacity();
 }
 
 int& Vector::operator[](int index)

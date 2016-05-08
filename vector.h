@@ -9,8 +9,6 @@ using namespace std;
 
 class Vector : public SortedVector
 {
-  private:
-    int capacity;
   public:
     int getCapacity();
     int& operator[](int index);

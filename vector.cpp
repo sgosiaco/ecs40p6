@@ -10,7 +10,7 @@ int* Vector::insert(int num)
 
   array[size++] = num;
   return &(array[size - 1]);
-}
+} //insert
 
 int* Vector::erase(int num)
 {
@@ -22,27 +22,21 @@ int* Vector::erase(int num)
 
       size--;
       return &(array[i]);
-    }
+    } //if
   return NULL;
-}
+} //erase
 
-int* Vector::find(int num)
+int* Vector::find(int num) const
 {
   for(int i = 0; i < size; i++)
   {
     if(!(array[i] < num) && !(num < array[i]))
-    {
       return &(array[i]);
-    }
-    cout << array[i] << " ";
-  }
-  return NULL;
-}
 
-int Vector::getCapacity()
-{
-  return SortedVector::getCapacity();
-}
+    cout << array[i] << " ";
+  } //for
+  return NULL;
+} //find
 
 int& Vector::operator[](int index)
 {
@@ -50,7 +44,7 @@ int& Vector::operator[](int index)
   {
     cout << "Virtual seg fault.\n";
     return array[0];
-  }
+  } //if
   else
     return array[index];
-}
+} //array

@@ -6,12 +6,12 @@ using namespace std;
 SortedVector::SortedVector() : Container(0), capacity(0)
 {
   array = NULL;
-}
+} //Con
 
 SortedVector::~SortedVector()
 {
   delete [] array;
-}
+} //Decon
 
 int* SortedVector::insert(int num)
 {
@@ -25,7 +25,7 @@ int* SortedVector::insert(int num)
   array[i + 1] = num;
   size++;
   return &(array[i + 1]);
-}
+} //insert
 
 int* SortedVector::erase(int num)
 {
@@ -37,11 +37,11 @@ int* SortedVector::erase(int num)
 
       size--;
       return &(array[i]);
-    }
+    }// if
   return NULL;
-}
+} //erase
 
-int* SortedVector::find(int num)
+int* SortedVector::find(int num) const
 {
   bool temp = true;
 
@@ -53,13 +53,12 @@ int* SortedVector::find(int num)
     for(int i = 0; i < size; i++)
     {
       if(!(array[i] < num) && !(num < array[i]))
-      {
         return &(array[i]);
-      }
+
       cout << array[i] << " ";
-    }
+    } //for
   return NULL;
-}
+} //find
 
 void SortedVector::resize()
 {
@@ -67,7 +66,7 @@ void SortedVector::resize()
   {
     array = new int[1];
     capacity = 1;
-  }
+  } //NULL
   else
   {
     int *temp = array;
@@ -78,13 +77,13 @@ void SortedVector::resize()
       array[i] = temp[i];
 
     delete [] temp;
-  }
-}
+  } //else
+} //resize
 
 int SortedVector::getCapacity()
 {
   return capacity;
-}
+} //getCapacity
 
 const int& SortedVector::operator[](int index) const
 {
@@ -92,7 +91,7 @@ const int& SortedVector::operator[](int index) const
   {
     cout << "Virtual seg fault.\n";
     return array[0];
-  }
+  } //out of bounds
   else
     return array[index];
-}
+} //array op

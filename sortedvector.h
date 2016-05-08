@@ -2,7 +2,6 @@
 #define	SORTEDVECTOR_H
 
 #include <iostream>
-#include <fstream>
 #include "container.h"
 
 using namespace std;
@@ -20,7 +19,7 @@ class SortedVector : public Container
     const int& operator[](int index) const;
     virtual int* insert(int num);
     virtual int* erase(int num);
-    virtual int* find(int num);
-    virtual ~SortedVector();
+    virtual int* find(int num) const;
+    ~SortedVector();
 } ;  // class SortedVector
 #endif	// SORTEDVECTOR_H

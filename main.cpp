@@ -66,7 +66,7 @@ containers[0] = vectors[0] = new SortedVector;  // uncomment for SortedVector
         break;
       case 'R' :
         inf >> index;
-        //num = (*vectors[containerNum])[index]; // uncomment for SortedVector
+        num = (*vectors[containerNum])[index]; // uncomment for SortedVector
         cout << "Read [" << index << "] : " << num << endl;
         break;
       case 'W' :

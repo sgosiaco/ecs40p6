@@ -11,4 +11,4 @@ sortedvector.o : sortedvector.cpp sortedvector.h
 	g++ -ansi -Wall -g -c sortedvector.cpp
 
 clean :
-	rm -f
+	rm -f containers.out main.o container.o sortedvector.o

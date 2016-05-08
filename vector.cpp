@@ -41,7 +41,7 @@ int* Vector::find(int num)
 
 int Vector::getCapacity()
 {
-  return getCapacity();
+  return SortedVector::getCapacity();
 }
 
 int& Vector::operator[](int index)

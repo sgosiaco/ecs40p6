@@ -9,6 +9,11 @@ Container::Container(int siz) : size(siz)
 
 }
 
+Container::~Container()
+{
+
+}
+
 int Container::getSize()
 {
   return size;

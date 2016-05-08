@@ -18,6 +18,6 @@ class Container
     virtual int* insert(int num) = 0;
     virtual int* erase(int num) = 0;
     virtual int* find(int num) = 0;
-    virtual ~Container() = 0;
+    virtual ~Container();
 } ;  // class Container
 #endif	// CONTAINER_H

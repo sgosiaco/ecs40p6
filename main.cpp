@@ -4,7 +4,7 @@
 #include <fstream>
 #include "container.h"
 //#include "vector.h"                         // uncomment for Vector
-//#include "sortedvector.h"                   // uncomment for SortedVector
+#include "sortedvector.h"                   // uncomment for SortedVector
 //#include "linkedlist.h"                     // uncomment for LinkedList
 //#include "sortedlinkedlist.h"               // uncomment for SortedLinkedList
 
@@ -16,8 +16,8 @@ int main(int argc, char** argv)
   int num, *intPtr, containerNum, index;
   Container *containers[4] = {NULL, NULL, NULL, NULL};
 
-// SortedVector *vectors[2];                       // uncomment for SortedVector
-// containers[0] = vectors[0] = new SortedVector;  // uncomment for SortedVector
+SortedVector *vectors[2];                       // uncomment for SortedVector
+containers[0] = vectors[0] = new SortedVector;  // uncomment for SortedVector
 // Vector *vectorPtr = new Vector;                 // uncomment for Vector
 // containers[1] = vectors[1] = vectorPtr;         // uncomment for Vector
 // LinkedList *lists[2];                            // uncomment for LinkedList
@@ -30,10 +30,10 @@ int main(int argc, char** argv)
   {
     switch(operation)
     {
-/*      case 'C' :   // uncomment for SortedVector
+    case 'C' :   // uncomment for SortedVector
         cout << "Capacity: " << vectors[containerNum]->getCapacity() << endl;
         break;
-*/                  // uncomment for SortedVector
+                  // uncomment for SortedVector
       case 'E' :
         inf >> num;
         intPtr = containers[containerNum]->erase(num);
@@ -66,7 +66,7 @@ int main(int argc, char** argv)
         break;
       case 'R' :
         inf >> index;
-//        num = (*vectors[containerNum])[index]; // uncomment for SortedVector
+        //num = (*vectors[containerNum])[index]; // uncomment for SortedVector
         cout << "Read [" << index << "] : " << num << endl;
         break;
       case 'W' :

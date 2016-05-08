@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include "container.h"
-//#include "vector.h"                         // uncomment for Vector
+#include "vector.h"                         // uncomment for Vector
 #include "sortedvector.h"                   // uncomment for SortedVector
 //#include "linkedlist.h"                     // uncomment for LinkedList
 //#include "sortedlinkedlist.h"               // uncomment for SortedLinkedList
@@ -18,8 +18,8 @@ int main(int argc, char** argv)
 
 SortedVector *vectors[2];                       // uncomment for SortedVector
 containers[0] = vectors[0] = new SortedVector;  // uncomment for SortedVector
-// Vector *vectorPtr = new Vector;                 // uncomment for Vector
-// containers[1] = vectors[1] = vectorPtr;         // uncomment for Vector
+Vector *vectorPtr = new Vector;                 // uncomment for Vector
+containers[1] = vectors[1] = vectorPtr;         // uncomment for Vector
 // LinkedList *lists[2];                            // uncomment for LinkedList
 // containers[2] = lists[0] = new LinkedList;       // uncomment for LinkedList
 // containers[3] = lists[1] = new SortedLinkedList; //uncomment SortedLinkedList
@@ -72,7 +72,7 @@ containers[0] = vectors[0] = new SortedVector;  // uncomment for SortedVector
       case 'W' :
         inf >> index >> num;
         cout << "Write [" << index << "] = " << num << endl;
-//      (*vectorPtr)[index] = num;  // uncomment for Vector
+        (*vectorPtr)[index] = num;  // uncomment for Vector
         break;
 /*    case 'M' :
         intPtr = --(*lists[containerNum - 2]);

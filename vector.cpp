@@ -1,33 +1,19 @@
 #include <iostream>
-#include "sortedvector.h"
+#include "vector.h"
 
 using namespace std;
 
-SortedVector::SortedVector() : Container(0), capacity(0)
+int* Vector::insert(int num)
 {
-  array = NULL;
-}
-
-SortedVector::~SortedVector()
-{
-  delete [] array;
-}
-
-int* SortedVector::insert(int num)
-{
-  int i;
-
+  cout << capacity << endl;
   if(size == capacity)
     resize();
-  for(i = size - 1; i >= 0 && array[i] > num; i--)
-    array[i + 1] = array[i];
 
-  array[i + 1] = num;
-  size++;
-  return &(array[i + 1]);
+  array[++size] = num;
+  return &(array[size]);
 }
 
-int* SortedVector::erase(int num)
+int* Vector::erase(int num)
 {
   for(int i = 0; i < size; i++)
     if(!(array[i] < num) && !(num < array[i]))
@@ -41,7 +27,7 @@ int* SortedVector::erase(int num)
   return NULL;
 }
 
-int* SortedVector::find(int num)
+int* Vector::find(int num)
 {
   bool temp = true;
 
@@ -61,7 +47,7 @@ int* SortedVector::find(int num)
   return NULL;
 }
 
-void SortedVector::resize()
+void Vector::resize()
 {
   if(!(capacity < 0) && !(0 < capacity))
   {
@@ -81,12 +67,12 @@ void SortedVector::resize()
   }
 }
 
-int SortedVector::getCapacity()
+int Vector::getCapacity()
 {
   return capacity;
 }
 
-const int& SortedVector::operator[](int index) const
+int& Vector::operator[](int index)
 {
   if(index < 0 || index > size - 1)
   {

@@ -47,26 +47,6 @@ int* Vector::find(int num)
   return NULL;
 }
 
-void Vector::resize()
-{
-  if(!(capacity < 0) && !(0 < capacity))
-  {
-    array = new int[1];
-    capacity = 1;
-  }
-  else
-  {
-    int *temp = array;
-    capacity *= 2;
-    array = new int[capacity];
-
-    for(int i = 0; i < size; i++)
-      array[i] = temp[i];
-
-    delete [] temp;
-  }
-}
-
 int Vector::getCapacity()
 {
   return capacity;

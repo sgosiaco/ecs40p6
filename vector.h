@@ -11,8 +11,6 @@ class Vector : public SortedVector
 {
   private:
     int capacity;
-  protected:
-    void resize();
   public:
     int getCapacity();
     int& operator[](int index);

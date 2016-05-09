@@ -19,7 +19,7 @@ class SortedVector : public Container
     const int& operator[](int index) const;
     virtual int* insert(int num);
     virtual int* erase(int num);
-    virtual int* find(int num) const;
+    virtual int* find(int num);
     ~SortedVector();
 } ;  // class SortedVector
 #endif	// SORTEDVECTOR_H

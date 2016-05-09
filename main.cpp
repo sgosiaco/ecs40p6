@@ -5,7 +5,7 @@
 #include "container.h"
 #include "vector.h"                         // uncomment for Vector
 #include "sortedvector.h"                   // uncomment for SortedVector
-//#include "linkedlist.h"                     // uncomment for LinkedList
+#include "linkedlist.h"                     // uncomment for LinkedList
 //#include "sortedlinkedlist.h"               // uncomment for SortedLinkedList
 
 using namespace std;
@@ -20,8 +20,8 @@ SortedVector *vectors[2];                       // uncomment for SortedVector
 containers[0] = vectors[0] = new SortedVector;  // uncomment for SortedVector
 Vector *vectorPtr = new Vector;                 // uncomment for Vector
 containers[1] = vectors[1] = vectorPtr;         // uncomment for Vector
-// LinkedList *lists[2];                            // uncomment for LinkedList
-// containers[2] = lists[0] = new LinkedList;       // uncomment for LinkedList
+LinkedList *lists[2];                            // uncomment for LinkedList
+containers[2] = lists[0] = new LinkedList;       // uncomment for LinkedList
 // containers[3] = lists[1] = new SortedLinkedList; //uncomment SortedLinkedList
 
   ifstream inf(argv[1]);
@@ -74,7 +74,7 @@ containers[1] = vectors[1] = vectorPtr;         // uncomment for Vector
         cout << "Write [" << index << "] = " << num << endl;
         (*vectorPtr)[index] = num;  // uncomment for Vector
         break;
-/*    case 'M' :
+    case 'M' :
         intPtr = --(*lists[containerNum - 2]);
         cout << "-- : ";
 
@@ -94,7 +94,7 @@ containers[1] = vectors[1] = vectorPtr;         // uncomment for Vector
           cout << "NULL\n";
 
         break;
-*/  // uncomment for LinkedList
+  // uncomment for LinkedList
     }  // switch
   }  // while more in file
 

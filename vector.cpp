@@ -26,7 +26,7 @@ int* Vector::erase(int num)
   return NULL;
 } //erase
 
-int* Vector::find(int num) const
+int* Vector::find(int num)
 {
   for(int i = 0; i < size; i++)
   {

@@ -1,5 +1,5 @@
-containers.out : main.o container.o sortedvector.o vector.o
-	g++ -ansi -Wall -g -o containers.out main.o container.o sortedvector.o vector.o
+containers.out : main.o container.o sortedvector.o vector.o linkedlist.o
+	g++ -ansi -Wall -g -o containers.out main.o container.o sortedvector.o vector.o linkedlist.o
 
 main.o : main.cpp
 	g++ -ansi -Wall -g -c main.cpp
@@ -13,5 +13,8 @@ sortedvector.o : sortedvector.cpp sortedvector.h
 vector.o : vector.cpp vector.h
 	g++ -ansi -Wall -g -c vector.cpp
 
+linkedlist.o : linkedlist.cpp linkedlist.h
+	g++ -ansi -Wall -g -c linkedlist.cpp
+
 clean :
-	rm -f containers.out main.o container.o sortedvector.o
+	rm -f containers.out main.o container.o sortedvector.o vector.o linkedlist.o

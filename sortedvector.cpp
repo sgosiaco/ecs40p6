@@ -41,7 +41,7 @@ int* SortedVector::erase(int num)
   return NULL;
 } //erase
 
-int* SortedVector::find(int num) const
+int* SortedVector::find(int num)
 {
   bool temp = true;
 

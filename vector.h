@@ -16,6 +16,6 @@ class Vector : public SortedVector
     int& operator[](int index);
     int* insert(int num);
     int* erase(int num);
-    int* find(int num) const;
+    int* find(int num);
 } ;  // class Vector
 #endif	// VECTOR_H

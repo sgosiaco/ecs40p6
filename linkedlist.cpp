@@ -37,12 +37,19 @@ LinkedList::~LinkedList()
 int* LinkedList::insert(int num)
 {
   if(!head)
-    tail = curr = head = new ListNode(num, NULL, NULL);
-  if(tail)
   {
-    tail->next = new ListNode(num, tail, NULL);
-    curr = tail = tail->next;
-  }
+    head = new ListNode(num, head, NULL);
+    tail = curr = head;
+    head = curr;
+  } //nothing in list
+  else //something in list
+  {
+    if(tail)
+    {
+      tail->next = new ListNode(num, tail, NULL);
+      curr = tail = tail->next;
+    } //if end exists
+  } //else
   size++;
   return &(tail->data);
 } //insert
@@ -84,8 +91,7 @@ int* LinkedList::erase(int num)
 int* LinkedList::find(int num)
 {
   for(curr = head; curr && curr->data != num; curr = curr->next)
-    if(curr->next && curr->next->data != num)
-      cout << curr->next->data << " ";
+      cout << curr->data << " ";
 
   if(curr)
     return &(curr->data);
@@ -96,18 +102,12 @@ int* LinkedList::find(int num)
 int* LinkedList::operator++()
 {
   if(curr)
-  {
-    cout << "PREV:" << curr << " " << curr->data << endl;
     curr = curr->next;
-  }
   else
     return NULL;
-    
+
   if(curr)
-  {
-    cout << "NEXT:" << curr << " " << curr->data << endl;
     return &(curr->data);
-  }
   else
     return NULL;
 } //incerement

@@ -17,7 +17,7 @@ int* SortedVector::insert(int num)
 {
   int i;
 
-  if((size < capacity && (capacity < size)))
+  if(!(size < capacity) && !(capacity < size))
     resize();
   for(i = size - 1; i >= 0 && array[i] > num; i--)
     array[i + 1] = array[i];

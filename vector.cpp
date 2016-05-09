@@ -5,7 +5,7 @@ using namespace std;
 
 int* Vector::insert(int num)
 {
-  if(size == getCapacity())
+  if((size < getCapacity()) && (getCapacity() < size))
     resize();
 
   array[size++] = num;

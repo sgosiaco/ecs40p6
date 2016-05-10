@@ -8,13 +8,6 @@ ListNode::ListNode(int off, ListNode *p, ListNode *n): data(off), previous(p)
   next = n;
 } //default const.
 
-void LinkedList::initialize(int row)
-{
-  for(int i = 0; i < row; i++)
-    head = new ListNode(0, NULL, head);
-
-} //initialize
-
 LinkedList::LinkedList() : Container(0), head(NULL), tail(NULL), curr(NULL)
 {
 
@@ -50,6 +43,7 @@ int* LinkedList::insert(int num)
       curr = tail = tail->next;
     } //if end exists
   } //else
+
   size++;
   return &(tail->data);
 } //insert
@@ -57,6 +51,7 @@ int* LinkedList::insert(int num)
 int* LinkedList::erase(int num)
 {
   ListNode *prev = NULL;
+
   for(curr = head; curr && curr->data != num; curr = curr->next)
     prev = curr;
 
@@ -73,7 +68,7 @@ int* LinkedList::erase(int num)
     delete curr;
     size--;
     return &(prev->next->data);
-  }
+  } //if
   else //at front
   {
     head = curr->next;
@@ -84,7 +79,7 @@ int* LinkedList::erase(int num)
     delete curr;
     size--;
     return &(head->data);
-  }
+  } //else
 
 } //erase
 
@@ -95,7 +90,7 @@ int* LinkedList::find(int num)
 
   if(curr)
     return &(curr->data);
-  else
+  else //dne
     return NULL;
 } //find
 
@@ -103,12 +98,12 @@ int* LinkedList::operator++()
 {
   if(curr)
     curr = curr->next;
-  else
+  else //dne
     return NULL;
 
   if(curr)
     return &(curr->data);
-  else
+  else //dne
     return NULL;
 } //incerement
 
@@ -116,11 +111,11 @@ int* LinkedList::operator--()
 {
   if(curr)
     curr = curr->previous;
-  else
+  else //dne
     return NULL;
 
   if(curr)
     return &(curr->data);
-  else
+  else //dne
     return NULL;
 } //decerement

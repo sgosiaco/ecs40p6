@@ -13,6 +13,7 @@ class ListNode
     ListNode *previous;
     ListNode *next;
     friend class LinkedList;
+    friend class SortedLinkedList;
     ListNode(int off, ListNode *p, ListNode *n);
 }; // class listnode
 
@@ -25,14 +26,13 @@ class LinkedList : public Container
     ListNode *tail;
     ListNode *curr;
   public:
-    void initialize(int row);
     LinkedList();
     ~LinkedList();
     virtual int* insert(int num);
     virtual int* erase(int num);
     virtual int* find(int num);
-    virtual int* operator++();
-    virtual int* operator--();
+    int* operator++();
+    int* operator--();
 }; //class LinkedList
 
 #endif	// LINKEDLIST_H

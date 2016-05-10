@@ -45,6 +45,6 @@ int& Vector::operator[](int index)
     cout << "Virtual seg fault.\n";
     return array[0];
   } //if
-  else
+  else //good index
     return array[index];
 } //array

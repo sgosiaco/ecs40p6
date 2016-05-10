@@ -41,7 +41,7 @@ int* SortedLinkedList::erase(int num)
   for(curr = head; curr && curr->data < num; curr = curr->next)
     prev = curr;
 
-  if(!curr || ((curr->data < num) && (num < curr->data)))
+  if(!curr || ((curr->data < num) || (num < curr->data)))
     return NULL;
 
   if(prev) //not front

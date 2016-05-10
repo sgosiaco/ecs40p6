@@ -13,15 +13,21 @@ int* SortedLinkedList::insert(int num)
     prev->next = new ListNode(num, prev, curr);
     if(curr)
       curr->previous = prev->next;
+
+    size++;
+    curr = prev->next;
+    return &(prev->next->data);
   }
   else //insert into front
   {
     head = new ListNode(num, prev, curr);
     if(curr)
       curr->previous = head;
+
+    curr = head;
+    size++;
+    return &(head->data);
   }
-  size++;
-  return &(curr->data);
 } //insert
 
 int* SortedLinkedList::erase(int num)

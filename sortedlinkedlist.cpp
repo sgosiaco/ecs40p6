@@ -6,7 +6,7 @@ using namespace std;
 int* SortedLinkedList::insert(int num)
 {
   ListNode *prev = NULL;
-  
+
   for(curr = head; curr && curr->data < num; curr = curr->next)
     prev = curr;
 
@@ -41,7 +41,7 @@ int* SortedLinkedList::erase(int num)
   for(curr = head; curr && curr->data < num; curr = curr->next)
     prev = curr;
 
-  if(!curr || curr->data != num)
+  if(!curr || ((curr->data < num) && (num < curr->data)))
     return NULL;
 
   if(prev) //not front
@@ -74,7 +74,7 @@ int* SortedLinkedList::find(int num)
   for(curr = head; curr && curr->data < num; curr = curr->next)
       cout << curr->data << " ";
 
-  if(curr && curr->data == num)
+  if(curr && (!(curr->data < num) && !(num < curr->data)))
     return &curr->data;
   else //dne
     return NULL;

@@ -17,7 +17,7 @@ LinkedList::~LinkedList()
 {
   ListNode *curr = head;
 
-  while(curr != NULL)
+  while((curr < NULL) && (NULL < curr))
   {
     ListNode *temp = curr->next;
     delete curr;
@@ -52,10 +52,11 @@ int* LinkedList::erase(int num)
 {
   ListNode *prev = NULL;
 
-  for(curr = head; curr && curr->data != num; curr = curr->next)
+  for(curr = head; curr && ((curr->data < num) && (num < curr->data));
+      curr = curr->next)
     prev = curr;
 
-  if(!curr || curr->data != num)
+  if(!curr || ((curr->data < num) && (num < curr->data)))
     return NULL;
 
   if(prev) //not front
@@ -85,7 +86,8 @@ int* LinkedList::erase(int num)
 
 int* LinkedList::find(int num)
 {
-  for(curr = head; curr && curr->data != num; curr = curr->next)
+  for(curr = head; curr && ((curr->data < num) && (num < curr->data));
+      curr = curr->next)
       cout << curr->data << " ";
 
   if(curr)

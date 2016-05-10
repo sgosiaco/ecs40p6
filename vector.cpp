@@ -23,6 +23,7 @@ int* Vector::erase(int num)
       size--;
       return &(array[i]);
     } //if
+
   return NULL;
 } //erase
 
@@ -35,6 +36,7 @@ int* Vector::find(int num)
 
     cout << array[i] << " ";
   } //for
+
   return NULL;
 } //find
 
@@ -43,7 +45,7 @@ int& Vector::operator[](int index)
   if(index < 0 || index > size - 1)
   {
     cout << "Virtual seg fault.\n";
-    return array[0];
+    return array[ZERO];
   } //if
   else //good index
     return array[index];

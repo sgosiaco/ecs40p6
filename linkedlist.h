@@ -20,7 +20,7 @@ class ListNode
 class LinkedList : public Container
 {
   private:
-
+    static const int ZERO = 0;
   protected:
     ListNode *head;
     ListNode *tail;

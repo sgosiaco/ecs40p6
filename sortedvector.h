@@ -10,6 +10,9 @@ class SortedVector : public Container
 {
   private:
     int capacity;
+    static const int ZERO = 0;
+    static const int ONE = 1;
+    static const int TWO = 2;
   protected:
     int* array;
     void resize();

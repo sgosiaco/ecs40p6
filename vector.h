@@ -9,7 +9,7 @@ using namespace std;
 class Vector : public SortedVector
 {
   private:
-
+    static const int ZERO = 0;
   protected:
 
   public:

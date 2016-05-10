@@ -8,7 +8,7 @@ using namespace std;
 class Container
 {
   private:
-
+    
   protected:
     int size;
   public:

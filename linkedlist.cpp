@@ -8,7 +8,7 @@ ListNode::ListNode(int off, ListNode *p, ListNode *n): data(off), previous(p)
   next = n;
 } //default const.
 
-LinkedList::LinkedList() : Container(0), head(NULL), tail(NULL), curr(NULL)
+LinkedList::LinkedList() : Container(ZERO), head(NULL), tail(NULL), curr(NULL)
 {
 
 } //defalt

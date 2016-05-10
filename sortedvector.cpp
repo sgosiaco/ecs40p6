@@ -3,7 +3,7 @@
 
 using namespace std;
 
-SortedVector::SortedVector() : Container(0), capacity(0)
+SortedVector::SortedVector() : Container(ZERO), capacity(ZERO)
 {
   array = NULL;
 } //Con
@@ -19,6 +19,7 @@ int* SortedVector::insert(int num)
 
   if(!(size < capacity) && !(capacity < size))
     resize();
+
   for(i = size - 1; i >= 0 && array[i] > num; i--)
     array[i + 1] = array[i];
 
@@ -38,6 +39,7 @@ int* SortedVector::erase(int num)
       size--;
       return &(array[i]);
     }// if
+
   return NULL;
 } //erase
 
@@ -57,6 +59,7 @@ int* SortedVector::find(int num)
 
       cout << array[i] << " ";
     } //for
+
   return NULL;
 } //find
 
@@ -64,13 +67,13 @@ void SortedVector::resize()
 {
   if(!(capacity < 0) && !(0 < capacity))
   {
-    array = new int[1];
+    array = new int[ONE];
     capacity = 1;
   } //NULL
-  else
+  else //not empty
   {
     int *temp = array;
-    capacity *= 2;
+    capacity *= TWO;
     array = new int[capacity];
 
     for(int i = 0; i < size; i++)
@@ -90,8 +93,8 @@ const int& SortedVector::operator[](int index) const
   if(index < 0 || index > size - 1)
   {
     cout << "Virtual seg fault.\n";
-    return array[0];
+    return array[ZERO];
   } //out of bounds
-  else
+  else //good
     return array[index];
 } //array op

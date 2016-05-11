@@ -10,6 +10,7 @@ class SortedVector : public Container
 {
   private:
     int capacity;
+    static const int NEG = -1;
     static const int ZERO = 0;
     static const int ONE = 1;
     static const int TWO = 2;

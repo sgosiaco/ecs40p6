@@ -83,7 +83,7 @@ void SortedVector::resize()
   } //else
 } //resize
 
-int SortedVector::getCapacity()
+int SortedVector::getCapacity() const
 {
   return capacity;
 } //getCapacity

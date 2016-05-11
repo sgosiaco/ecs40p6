@@ -18,7 +18,7 @@ class SortedVector : public Container
     void resize();
   public:
     SortedVector();
-    int getCapacity();
+    int getCapacity() const;
     const int& operator[](int index) const;
     virtual int* insert(int num);
     virtual int* erase(int num);

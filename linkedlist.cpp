@@ -30,11 +30,7 @@ LinkedList::~LinkedList()
 int* LinkedList::insert(int num)
 {
   if(!head)
-  {
-    head = new ListNode(num, head, NULL);
-    tail = curr = head;
-    head = curr;
-  } //nothing in list
+    tail = curr = head = new ListNode(num, head, NULL);
   else //something in list
   {
     if(tail)

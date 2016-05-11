@@ -8,12 +8,12 @@ using namespace std;
 class Container
 {
   private:
-    
+
   protected:
     int size;
   public:
     Container(int siz);
-    int getSize();
+    int getSize() const;
     virtual int* insert(int num) = 0;
     virtual int* erase(int num) = 0;
     virtual int* find(int num) = 0;

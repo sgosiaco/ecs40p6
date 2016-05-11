@@ -14,7 +14,7 @@ Container::~Container()
 
 } //Decon
 
-int Container::getSize()
+int Container::getSize() const
 {
   return size;
 } //getSize()
